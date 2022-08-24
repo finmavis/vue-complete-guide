@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Vue</title>
+</head>
+<body>
+  <header>
+    <h1>Vue course goals</h2>
+  </header>
+  <section id="user-goal">
+    <h2>My course goal</h2>
+    <p>{{ courseGoal }}</p>
+    <p>{{ outputGoal() }}</p>
+    <p>{{ outputGoalV2() }}</p>
+    <p>{{ Math.random() }}</p>
+    <!-- HTML Example -->
+    <div v-html="html"></div>
+    <p>Learn more <a v-bind:href="link">about Vue</a>.</p>
+  </section>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

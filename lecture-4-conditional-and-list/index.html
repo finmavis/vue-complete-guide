@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Vue</title>
+</head>
+<body>
+  <header>
+    <h1>Vue Course Goals</h2>
+  </header>
+  <section id="user-goals">
+    <h2>My course Goals</h2>
+    <input v-model="goal" type="text" />
+    <button @click="addGoal">Add goal</button>
+    <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
+    <ul v-else-if="goals.length > 0">
+      <li v-for="(goal, index) in goals" :key="goal" @click="removeGoal(index)">
+        <p>{{index}} - {{ goal }}</p>
+        <input type="text" @click.stop />
+      </li>
+    </ul>
+    <p v-else>Something went wrong!</p>
+    <!-- Or can use the v-show -->
+    <!-- This will only hide the content, not removed (display none) -->
+    <ul v-show="goals.length > 0">
+      <li>Goal</li>
+    </ul>
+    <ul>
+      <li v-for="(value, key, index) in {name: 'Fin', age: 17}">{{ key }}: {{ value }}</li>
+    </ul>
+    <ul>
+      <li v-for="num in 10">{{ num }}</li>
+    </ul>
+  </section>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Vue</title>
+</head>
+<body>
+  <header>
+    <h1>Vue Events</h2>
+  </header>
+  <section id="user-goal">
+    <h2>Events in Action</h2>
+    <!-- Not optimal to directly put logic here in the HTML -->
+    <button v-on:click="count++">Add</button>
+    <button v-on:click="count--">Reduce</button>
+    <!-- Better way -->
+    <button v-on:click="add">Add methods reference</button>
+    <button v-on:click="reduce">Reduce methods reference</button>
+    <!-- Or alternative -->
+    <button @click="add">Add methods reference</button>
+    <button @click="reduce">Reduce methods reference</button>
+    <!-- With Params -->
+    <button @click="addBy(5)">Add by 5</button>
+    <button @click="reduceBy(5)">Reduce by 5</button>
+
+    <input type="text" v-bind:value="name" v-on:input="setName" />
+    <!-- Can be simplify to v-model directive -->
+    <!-- Two way binding, the same as above -->
+    <input type="text" v-model="name" />
+    <input type="text" v-on:input="setNameWithLastName($event, 'Lastname')" />
+    <p>Your name: {{ name }}</p>
+    <button v-on:click="resetForm">Reset</button>
+    <p>{{ count }}</p>
+
+    <form v-on:submit="submitForm">
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Or using event modifiers -->
+    <form v-on:submit.prevent="submitFormWithModifiers">
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

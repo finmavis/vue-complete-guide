@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Vue</title>
+</head>
+<body>
+  <header>
+    <h1>Vue Dynamic Styling</h2>
+  </header>
+  <section id="styling">
+    <div class="demo" :style="{ padding: '10px', 'border-color': boxASelected ? 'red' : '#ccc' }" @click="boxSelected('A')"></div>
+    <div class="demo" :class="boxBSelected ? 'demo active' : 'demo'" @click="boxSelected('B')"></div>
+    <!-- Using object -->
+    <div class="demo" class="demo" :class="{ active: boxBSelected }" @click="boxSelected('B')"></div>
+    <!-- Using computed -->
+    <div class="demo" style="display: block;" class="demo" :class="boxCClass" @click="boxSelected('C')"></div>
+    <!-- As array -->
+    <div class="demo" :class="['demo', boxCClass]" @click="boxSelected('C')"></div>
+  </section>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

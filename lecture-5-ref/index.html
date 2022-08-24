@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Vue</title>
+</head>
+<body>
+  <header>
+    <h1>Vue Course - Ref</h2>
+  </header>
+  <section id="ref-example">
+    <form>
+      <!-- <input type="text" v-model="currentUserInput" /> -->
+      <!-- We can also use ref to access the dom value instead of listening to every key stroke -->
+      <input type="text" ref="userText" />
+      <button @click.prevent="setText">Set Text</button>
+      <p>{{ message }}</p>
+    </form>
+  </section>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
